@@ -12,7 +12,6 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-
         <title>Dashboard Bootstrap</title>
     </head>
     <body>
@@ -38,7 +37,8 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="#"
                                     aria-current="page">Catalogo Libri
-                                    <span class="visually-hidden">(current)</span></a>
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Anagrafica utenti</a>
@@ -53,14 +53,12 @@
                     </div>
                 </div>
             </nav>
-
         </header>
         <main id="site_main">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
                     <h1 class="fs-3 my-3 text-muted">Catalogo libri</h1>
-                    <!-- <button class="btn btn-primary">Aggiungi Libro</button> -->
-
+                    <!--BUTTON COLLEGATO A OFFCANVAS-->
                     <button
                         class="btn btn-primary"
                         type="button"
@@ -89,27 +87,71 @@
                         <div class="offcanvas-body">
                             <div>
                                 <!--FORM-->
-                                <div class="mb-3">
-                                    <label for="title" class="form-label">Title
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="title"
-                                        id="title"
-                                        class="form-control"
-                                        min="5" max="50"
-                                        placeholder="Learn Kubernetes"
-                                        aria-describedby="titleHelper"
-                                        required />
-                                    <small id="titleHelper" class="text-muted">Type
-                                        the book title above. Min 5 characters,
-                                        max 30.</small>
-                                </div>
+                                <form action>
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="title"
+                                            id="title"
+                                            class="form-control"
+                                            minlength="5" maxlength="50"
+                                            placeholder="Learn Kubernetes"
+                                            aria-describedby="titleHelper"
+                                            required />
+                                        <small id="titleHelper"
+                                            class="text-muted">Type
+                                            the book title above. Min 5
+                                            characters,
+                                            max 30.</small>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="date_loan"
+                                            class="form-label">Date
+                                        </label>
+                                        <input
+                                            type="date"
+                                            name="date_loan"
+                                            id="date_loan"
+                                            class="form-control"
+                                            aria-describedby="LoanDateHelper"
+                                            required />
+                                        <small id="LoanDateHelper"
+                                            class="text-muted">Add the loan date</small>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="status" class="form-label">Status
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="status"
+                                            id="status"
+                                            class="form-control"
+                                            minlength="5" maxlength="50"
+                                            placeholder="ex. Disponibile"
+                                            aria-describedby="statusHelper"
+                                            required />
+                                        <small id="statusHelper"
+                                            class="text-muted">Type
+                                            the book title above. Min 5
+                                            characters,
+                                            max 30.</small>
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary">
+                                        Save
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <!--TABELLA-->
                 <div
                     class="table-responsive-md">
                     <table
@@ -128,29 +170,163 @@
                                 <td scope="row">I pilastri della terra</td>
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td>
-                                    <span
-                                        class="badge bg-success">Disponibile</span>
+                                    <span class="badge bg-success">Disponibile</span>
                                 </td>
                                 <td>
+                                    <!--OFFCANVAS PEN-->
                                     <button
+                                        class="btn btn-outline-secondary"
                                         type="button"
-                                        class="btn btn-outline-secondary">
+                                        data-bs-toggle="offcanvas"
+                                        data-bs-target="#update-book-1"
+                                        aria-controls="update-book-1">
                                         <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
                                     </button>
+
+                                    <div
+                                        class="offcanvas offcanvas-end"
+                                        data-bs-backdrop="static"
+                                        tabindex="-1"
+                                        id="update-book-1"
+                                        aria-labelledby="staticBackdropLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title"
+                                                id="staticBackdropLabel">
+                                                Edit Book
+                                            </h5>
+                                            <button
+                                                type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div>
+                                                <form action>
+                                                    <div class="mb-3">
+                                                        <label for="title" class="form-label">Title
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            name="title"
+                                                            id="title"
+                                                            class="form-control"
+                                                            minlength="5" maxlength="50"
+                                                            placeholder="Learn Kubernetes"
+                                                            aria-describedby="titleHelper"
+                                                            value="I pilastri della terra"
+                                                            required />
+                                                        <small id="titleHelper"
+                                                            class="text-muted">Type
+                                                            the book title above. Min 5
+                                                            characters,
+                                                            max 30.</small>
+                                                    </div>
+                
+                                                    <div class="mb-3">
+                                                        <label for="date_loan"
+                                                            class="form-label">Date
+                                                        </label>
+                                                        <input
+                                                            type="date"
+                                                            name="date_loan"
+                                                            id="date_loan"
+                                                            class="form-control"
+                                                            aria-describedby="LoanDateHelper"
+                                                            value="2023-12-10"
+                                                            required />
+                                                        <small id="LoanDateHelper"
+                                                            class="text-muted">Add the loan date</small>
+                                                    </div>
+                
+                                                    <div class="mb-3">
+                                                        <label for="status" class="form-label">Status
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            name="status"
+                                                            id="status"
+                                                            class="form-control"
+                                                            minlength="5" maxlength="50"
+                                                            placeholder="ex. Disponibile"
+                                                            aria-describedby="statusHelper"
+                                                            value="Disponibile"
+                                                            required />
+                                                        <small id="statusHelper"
+                                                            class="text-muted">Type
+                                                            the book title above. Min 5
+                                                            characters,
+                                                            max 30.</small>
+                                                    </div>
+                
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-primary">
+                                                        Update <i class="fas fa-floppy-disk fa-sm fa-fw"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- MODALE PER CESTINO-->
                                     <button
                                         type="button"
-                                        class="btn btn-outline-secondary">
+                                        class="btn btn-outline-danger"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#book-1">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
+                                    <!-- Modal Body -->
+                                    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                                    <div
+                                        class="modal fade"
+                                        id="book-1"
+                                        tabindex="-1"
+                                        data-bs-backdrop="static"
+                                        data-bs-keyboard="false"
+                                        role="dialog"
+                                        aria-labelledby="ModalTitle-1"
+                                        aria-hidden="true">
+                                        <div
+                                            class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                            role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title"
+                                                        id="ModalTitle-1">
+                                                        Delete book 1
+                                                    </h5>
+                                                    <button
+                                                        type="button"
+                                                        class="btn-close"
+                                                        data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">Are you
+                                                    sure you want to delete this
+                                                    book?</div>
+                                                <div class="modal-footer">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                    <button type="button"
+                                                        class="btn btn-danger">Confirm</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Fine modale per cestino -->
                                 </td>
                             </tr>
                             <tr class>
                                 <td scope="row">I promessi sposi</td>
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td>
-                                    <span
-                                        class="badge bg-success">Disponibile</span>
+                                    <span class="badge bg-success">Disponibile</span>
                                 </td>
                                 <td>
                                     <button
@@ -163,15 +339,13 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
                                 <td scope="row">Il signore degli anelli</td>
                                 <td class="d-none d-md-table-cell">18/10/2023</td>
                                 <td>
-                                    <span
-                                        class="badge bg-warning">In prestito</span>
+                                    <span class="badge bg-warning">In prestito</span>
                                 </td>
                                 <td>
                                     <button
@@ -184,7 +358,6 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
@@ -192,8 +365,7 @@
                                     filosofale</td>
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td>
-                                    <span
-                                        class="badge bg-success">Disponibilee</span>
+                                    <span class="badge bg-success">Disponibilee</span>
                                 </td>
                                 <td>
                                     <button
@@ -206,15 +378,14 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
                                 <td scope="row">Il codice Da Vinci</td>
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td>
-                                    <span
-                                        class="badge bg-danger">Non disponibile</span>
+                                    <span class="badge bg-danger">Non
+                                        disponibile</span>
                                 </td>
                                 <td>
                                     <button
@@ -227,15 +398,13 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
                                 <td scope="row">Shining</td>
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td>
-                                    <span
-                                        class="badge bg-success">Disponibile</span>
+                                    <span class="badge bg-success">Disponibile</span>
                                 </td>
                                 <td>
                                     <button
@@ -248,15 +417,13 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
                                 <td scope="row">La divina commedia</td>
                                 <td class="d-none d-md-table-cell">21/09/2023</td>
                                 <td>
-                                    <span
-                                        class="badge bg-warning">In prestito</span>
+                                    <span class="badge bg-warning">In prestito</span>
                                 </td>
                                 <td>
                                     <button
@@ -269,15 +436,13 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
                                 <td scope="row">Il trono di spade</td>
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td>
-                                    <span
-                                        class="badge bg-success">Disponibile</span>
+                                    <span class="badge bg-success">Disponibile</span>
                                 </td>
                                 <td>
                                     <button
@@ -290,15 +455,14 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
                                 <td scope="row">Il mondo di Sofia</td>
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td>
-                                    <span
-                                        class="badge bg-danger">Non disponibile</span>
+                                    <span class="badge bg-danger">Non
+                                        disponibile</span>
                                 </td>
                                 <td>
                                     <button
@@ -311,7 +475,6 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
@@ -319,8 +482,7 @@
                                     la strega e l'armadio</td>
                                 <td class="d-none d-md-table-cell">25/07/2023</td>
                                 <td>
-                                    <span
-                                        class="badge bg-warning">In prestito</span>
+                                    <span class="badge bg-warning">In prestito</span>
                                 </td>
                                 <td>
                                     <button
@@ -333,15 +495,13 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
                                 <td scope="row">Il piccolo principe</td>
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td>
-                                    <span
-                                        class="badge bg-success">Disponibile</span>
+                                    <span class="badge bg-success">Disponibile</span>
                                 </td>
                                 <td>
                                     <button
@@ -354,15 +514,13 @@
                                         class="btn btn-outline-secondary">
                                         <i class="fas fa-trash fa-sm fa-fw"></i>
                                     </button>
-
                                 </td>
                             </tr>
                             <tr class>
                                 <td scope="row">La storia infinita</td>
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td>
-                                    <span
-                                        class="badge bg-success">Disponibile</span>
+                                    <span class="badge bg-success">Disponibile</span>
                                 </td>
                                 <td>
                                     <button
@@ -380,9 +538,7 @@
                         </tbody>
                     </table>
                 </div>
-
             </div>
-
         </main>
 
         <script
