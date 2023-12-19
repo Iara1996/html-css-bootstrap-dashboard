@@ -50,494 +50,682 @@
                                 <a class="nav-link" href="#">Help</a>
                             </li>
                         </ul>
+                        <form class="d-flex my-2 my-lg-0">
+                            <input
+                                class="form-control me-sm-2"
+                                type="text"
+                                placeholder="Search" />
+                            <button
+                                class="btn btn-outline-light my-2 my-sm-0" type="submit">
+                                Cerca
+                            </button>
+                        </form>
+
                     </div>
                 </div>
             </nav>
         </header>
         <main id="site_main">
             <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h1 class="fs-3 my-3 text-muted">Catalogo libri</h1>
-                    <!--BUTTON COLLEGATO A OFFCANVAS-->
-                    <button
-                        class="btn btn-primary"
-                        type="button"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#AddBook"
-                        aria-controls="AddBook">
-                        Aggiungi Libro
-                    </button>
-                    <!--OFFCANVAS SU BUTTON-->
-                    <div
-                        class="offcanvas offcanvas-start"
-                        data-bs-backdrop="static"
-                        tabindex="-1"
-                        id="AddBook"
-                        aria-labelledby="staticBackdropLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="staticBackdropLabel">
-                                Offcanvas
-                            </h5>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div
+                            class="d-flex justify-content-between align-items-center">
+                            <h1 class="fs-3 my-3 text-muted">Catalogo libri</h1>
+                            <!--BUTTON COLLEGATO A OFFCANVAS-->
                             <button
+                                class="btn btn-primary"
                                 type="button"
-                                class="btn-close"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <div>
-                                <!--FORM-->
-                                <form action>
-                                    <div class="mb-3">
-                                        <label for="title" class="form-label">Title
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="title"
-                                            id="title"
-                                            class="form-control"
-                                            minlength="5" maxlength="50"
-                                            placeholder="Learn Kubernetes"
-                                            aria-describedby="titleHelper"
-                                            required />
-                                        <small id="titleHelper"
-                                            class="text-muted">Type
-                                            the book title above. Min 5
-                                            characters,
-                                            max 30.</small>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="date_loan"
-                                            class="form-label">Date
-                                        </label>
-                                        <input
-                                            type="date"
-                                            name="date_loan"
-                                            id="date_loan"
-                                            class="form-control"
-                                            aria-describedby="LoanDateHelper"
-                                            required />
-                                        <small id="LoanDateHelper"
-                                            class="text-muted">Add the loan date</small>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="status" class="form-label">Status
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="status"
-                                            id="status"
-                                            class="form-control"
-                                            minlength="5" maxlength="50"
-                                            placeholder="ex. Disponibile"
-                                            aria-describedby="statusHelper"
-                                            required />
-                                        <small id="statusHelper"
-                                            class="text-muted">Type
-                                            the book title above. Min 5
-                                            characters,
-                                            max 30.</small>
-                                    </div>
-
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#AddBook"
+                                aria-controls="AddBook">
+                                Aggiungi Libro
+                            </button>
+                            <!--OFFCANVAS SU BUTTON-->
+                            <div
+                                class="offcanvas offcanvas-start"
+                                data-bs-backdrop="static"
+                                tabindex="-1"
+                                id="AddBook"
+                                aria-labelledby="staticBackdropLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title"
+                                        id="staticBackdropLabel">
+                                        Offcanvas
+                                    </h5>
                                     <button
-                                        type="submit"
-                                        class="btn btn-primary">
-                                        Save
-                                    </button>
-                                </form>
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <div>
+                                        <!--FORM-->
+                                        <form action>
+                                            <div class="mb-3">
+                                                <label for="title"
+                                                    class="form-label">Title
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    name="title"
+                                                    id="title"
+                                                    class="form-control"
+                                                    minlength="5" maxlength="50"
+                                                    placeholder="Learn Kubernetes"
+                                                    aria-describedby="titleHelper"
+                                                    required />
+                                                <small id="titleHelper"
+                                                    class="text-muted">Type
+                                                    the book title above. Min 5
+                                                    characters,
+                                                    max 30.</small>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="date_loan"
+                                                    class="form-label">Date
+                                                </label>
+                                                <input
+                                                    type="date"
+                                                    name="date_loan"
+                                                    id="date_loan"
+                                                    class="form-control"
+                                                    aria-describedby="LoanDateHelper"
+                                                    required />
+                                                <small id="LoanDateHelper"
+                                                    class="text-muted">Add the
+                                                    loan date</small>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="status"
+                                                    class="form-label">Status
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    name="status"
+                                                    id="status"
+                                                    class="form-control"
+                                                    minlength="5" maxlength="50"
+                                                    placeholder="ex. Disponibile"
+                                                    aria-describedby="statusHelper"
+                                                    required />
+                                                <small id="statusHelper"
+                                                    class="text-muted">Type
+                                                    the book title above. Min 5
+                                                    characters,
+                                                    max 30.</small>
+                                            </div>
+
+                                            <button
+                                                type="submit"
+                                                class="btn btn-primary">
+                                                Save
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!--TABELLA-->
-                <div
-                    class="table-responsive-md">
-                    <table
-                        class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="w-50">Titolo</th>
-                                <th scope="col" class="d-none d-md-block">Data
-                                    prestito</th>
-                                <th scope="col">Stato</th>
-                                <th scope="col">Azioni</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class>
-                                <td scope="row">I pilastri della terra</td>
-                                <td class="d-none d-md-table-cell">-</td>
-                                <td>
-                                    <span class="badge bg-success">Disponibile</span>
-                                </td>
-                                <td>
-                                    <!--OFFCANVAS PEN-->
-                                    <button
-                                        class="btn btn-outline-secondary"
-                                        type="button"
-                                        data-bs-toggle="offcanvas"
-                                        data-bs-target="#update-book-1"
-                                        aria-controls="update-book-1">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-
-                                    <div
-                                        class="offcanvas offcanvas-end"
-                                        data-bs-backdrop="static"
-                                        tabindex="-1"
-                                        id="update-book-1"
-                                        aria-labelledby="staticBackdropLabel">
-                                        <div class="offcanvas-header">
-                                            <h5 class="offcanvas-title"
-                                                id="staticBackdropLabel">
-                                                Edit Book
-                                            </h5>
+                        <!--TABELLA-->
+                        <div
+                            class="table-responsive-md">
+                            <table
+                                class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="w-50">Titolo</th>
+                                        <th scope="col"
+                                            class="d-none d-md-block">Data
+                                            prestito</th>
+                                        <th scope="col">Stato</th>
+                                        <th scope="col">Azioni</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class>
+                                        <td scope="row">I pilastri della terra</td>
+                                        <td class="d-none d-md-table-cell">-</td>
+                                        <td>
+                                            <span class="badge bg-success">Disponibile</span>
+                                        </td>
+                                        <td>
+                                            <!--OFFCANVAS PEN-->
                                             <button
+                                                class="btn btn-outline-secondary"
                                                 type="button"
-                                                class="btn-close"
-                                                data-bs-dismiss="offcanvas"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="offcanvas-body">
-                                            <div>
-                                                <form action>
-                                                    <div class="mb-3">
-                                                        <label for="title" class="form-label">Title
-                                                        </label>
-                                                        <input
-                                                            type="text"
-                                                            name="title"
-                                                            id="title"
-                                                            class="form-control"
-                                                            minlength="5" maxlength="50"
-                                                            placeholder="Learn Kubernetes"
-                                                            aria-describedby="titleHelper"
-                                                            value="I pilastri della terra"
-                                                            required />
-                                                        <small id="titleHelper"
-                                                            class="text-muted">Type
-                                                            the book title above. Min 5
-                                                            characters,
-                                                            max 30.</small>
-                                                    </div>
-                
-                                                    <div class="mb-3">
-                                                        <label for="date_loan"
-                                                            class="form-label">Date
-                                                        </label>
-                                                        <input
-                                                            type="date"
-                                                            name="date_loan"
-                                                            id="date_loan"
-                                                            class="form-control"
-                                                            aria-describedby="LoanDateHelper"
-                                                            value="2023-12-10"
-                                                            required />
-                                                        <small id="LoanDateHelper"
-                                                            class="text-muted">Add the loan date</small>
-                                                    </div>
-                
-                                                    <div class="mb-3">
-                                                        <label for="status" class="form-label">Status
-                                                        </label>
-                                                        <input
-                                                            type="text"
-                                                            name="status"
-                                                            id="status"
-                                                            class="form-control"
-                                                            minlength="5" maxlength="50"
-                                                            placeholder="ex. Disponibile"
-                                                            aria-describedby="statusHelper"
-                                                            value="Disponibile"
-                                                            required />
-                                                        <small id="statusHelper"
-                                                            class="text-muted">Type
-                                                            the book title above. Min 5
-                                                            characters,
-                                                            max 30.</small>
-                                                    </div>
-                
-                                                    <button
-                                                        type="submit"
-                                                        class="btn btn-primary">
-                                                        Update <i class="fas fa-floppy-disk fa-sm fa-fw"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                data-bs-toggle="offcanvas"
+                                                data-bs-target="#update-book-1"
+                                                aria-controls="update-book-1">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
 
-                                    <!-- MODALE PER CESTINO-->
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-danger"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#book-1">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                    <!-- Modal Body -->
-                                    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                                    <div
-                                        class="modal fade"
-                                        id="book-1"
-                                        tabindex="-1"
-                                        data-bs-backdrop="static"
-                                        data-bs-keyboard="false"
-                                        role="dialog"
-                                        aria-labelledby="ModalTitle-1"
-                                        aria-hidden="true">
-                                        <div
-                                            class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
-                                            role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title"
-                                                        id="ModalTitle-1">
-                                                        Delete book 1
+                                            <div
+                                                class="offcanvas offcanvas-end"
+                                                data-bs-backdrop="static"
+                                                tabindex="-1"
+                                                id="update-book-1"
+                                                aria-labelledby="staticBackdropLabel">
+                                                <div class="offcanvas-header">
+                                                    <h5 class="offcanvas-title"
+                                                        id="staticBackdropLabel">
+                                                        Edit Book
                                                     </h5>
                                                     <button
                                                         type="button"
                                                         class="btn-close"
-                                                        data-bs-dismiss="modal"
+                                                        data-bs-dismiss="offcanvas"
                                                         aria-label="Close"></button>
                                                 </div>
-                                                <div class="modal-body">Are you
-                                                    sure you want to delete this
-                                                    book?</div>
-                                                <div class="modal-footer">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">
-                                                        Close
-                                                    </button>
-                                                    <button type="button"
-                                                        class="btn btn-danger">Confirm</button>
+                                                <div class="offcanvas-body">
+                                                    <div>
+                                                        <form action>
+                                                            <div class="mb-3">
+                                                                <label
+                                                                    for="title"
+                                                                    class="form-label">Title
+                                                                </label>
+                                                                <input
+                                                                    type="text"
+                                                                    name="title"
+                                                                    id="title"
+                                                                    class="form-control"
+                                                                    minlength="5"
+                                                                    maxlength="50"
+                                                                    placeholder="Learn Kubernetes"
+                                                                    aria-describedby="titleHelper"
+                                                                    value="I pilastri della terra"
+                                                                    required />
+                                                                <small
+                                                                    id="titleHelper"
+                                                                    class="text-muted">Type
+                                                                    the book
+                                                                    title above.
+                                                                    Min 5
+                                                                    characters,
+                                                                    max 30.</small>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label
+                                                                    for="date_loan"
+                                                                    class="form-label">Date
+                                                                </label>
+                                                                <input
+                                                                    type="date"
+                                                                    name="date_loan"
+                                                                    id="date_loan"
+                                                                    class="form-control"
+                                                                    aria-describedby="LoanDateHelper"
+                                                                    value="2023-12-10"
+                                                                    required />
+                                                                <small
+                                                                    id="LoanDateHelper"
+                                                                    class="text-muted">Add
+                                                                    the loan
+                                                                    date</small>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label
+                                                                    for="status"
+                                                                    class="form-label">Status
+                                                                </label>
+                                                                <input
+                                                                    type="text"
+                                                                    name="status"
+                                                                    id="status"
+                                                                    class="form-control"
+                                                                    minlength="5"
+                                                                    maxlength="50"
+                                                                    placeholder="ex. Disponibile"
+                                                                    aria-describedby="statusHelper"
+                                                                    value="Disponibile"
+                                                                    required />
+                                                                <small
+                                                                    id="statusHelper"
+                                                                    class="text-muted">Type
+                                                                    the book
+                                                                    title above.
+                                                                    Min 5
+                                                                    characters,
+                                                                    max 30.</small>
+                                                            </div>
+
+                                                            <button
+                                                                type="submit"
+                                                                class="btn btn-primary">
+                                                                Update <i
+                                                                    class="fas fa-floppy-disk fa-sm fa-fw"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
                                                 </div>
+                                            </div>
+
+                                            <!-- MODALE PER CESTINO-->
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-danger"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#book-1">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                            <!-- Modal Body -->
+                                            <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                                            <div
+                                                class="modal fade"
+                                                id="book-1"
+                                                tabindex="-1"
+                                                data-bs-backdrop="static"
+                                                data-bs-keyboard="false"
+                                                role="dialog"
+                                                aria-labelledby="ModalTitle-1"
+                                                aria-hidden="true">
+                                                <div
+                                                    class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                                    role="document">
+                                                    <div class="modal-content">
+                                                        <div
+                                                            class="modal-header">
+                                                            <h5
+                                                                class="modal-title"
+                                                                id="ModalTitle-1">
+                                                                Delete book 1
+                                                            </h5>
+                                                            <button
+                                                                type="button"
+                                                                class="btn-close"
+                                                                data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">Are
+                                                            you
+                                                            sure you want to
+                                                            delete this
+                                                            book?</div>
+                                                        <div
+                                                            class="modal-footer">
+                                                            <button
+                                                                type="button"
+                                                                class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                            <button
+                                                                type="button"
+                                                                class="btn btn-danger">Confirm</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Fine modale per cestino -->
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">I promessi sposi</td>
+                                        <td class="d-none d-md-table-cell">-</td>
+                                        <td>
+                                            <span class="badge bg-success">Disponibile</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">Il signore degli anelli</td>
+                                        <td class="d-none d-md-table-cell">18/10/2023</td>
+                                        <td>
+                                            <span class="badge bg-warning">In
+                                                prestito</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">Harry Potter e la pietra
+                                            filosofale</td>
+                                        <td class="d-none d-md-table-cell">-</td>
+                                        <td>
+                                            <span class="badge bg-success">Disponibilee</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">Il codice Da Vinci</td>
+                                        <td class="d-none d-md-table-cell">-</td>
+                                        <td>
+                                            <span class="badge bg-danger">Non
+                                                disponibile</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">Shining</td>
+                                        <td class="d-none d-md-table-cell">-</td>
+                                        <td>
+                                            <span class="badge bg-success">Disponibile</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">La divina commedia</td>
+                                        <td class="d-none d-md-table-cell">21/09/2023</td>
+                                        <td>
+                                            <span class="badge bg-warning">In
+                                                prestito</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">Il trono di spade</td>
+                                        <td class="d-none d-md-table-cell">-</td>
+                                        <td>
+                                            <span class="badge bg-success">Disponibile</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">Il mondo di Sofia</td>
+                                        <td class="d-none d-md-table-cell">-</td>
+                                        <td>
+                                            <span class="badge bg-danger">Non
+                                                disponibile</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">Le cronache di Narnia;
+                                            il leone,
+                                            la strega e l'armadio</td>
+                                        <td class="d-none d-md-table-cell">25/07/2023</td>
+                                        <td>
+                                            <span class="badge bg-warning">In
+                                                prestito</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">Il piccolo principe</td>
+                                        <td class="d-none d-md-table-cell">-</td>
+                                        <td>
+                                            <span class="badge bg-success">Disponibile</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class>
+                                        <td scope="row">La storia infinita</td>
+                                        <td class="d-none d-md-table-cell">-</td>
+                                        <td>
+                                            <span class="badge bg-success">Disponibile</span>
+                                        </td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-pencil-alt fa-sm fa-fw"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-secondary">
+                                                <i
+                                                    class="fas fa-trash fa-sm fa-fw"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <!--TO DO-->
+                        <div class="card todo my-3">
+                            <div class="card-header">To do</div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <input class="form-check-input me-1"
+                                            type="checkbox">
+                                        Active item
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-check-input me-1"
+                                            type="checkbox">
+                                        Item
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-check-input me-1"
+                                            type="checkbox">
+                                        Disabled item
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--FAQ'S-->
+                        <div class="card faqs">
+                            <div class="card-header">FAQ's</div>
+                            <div class="card-body">
+                                <div class="accordion accordion-flush"
+                                    id="faq-accordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header"
+                                            id="flush-faq-1">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapse-faq-1"
+                                                aria-expanded="true"
+                                                aria-controls="flush-collapse-faq-1">
+                                                Accordion Item #1
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="flush-collapse-faq-1"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingOne"
+                                            data-bs-parent="#faq-accordion">
+                                            <div class="accordion-body">
+                                                This is the first item's
+                                                accordion body.
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Fine modale per cestino -->
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">I promessi sposi</td>
-                                <td class="d-none d-md-table-cell">-</td>
-                                <td>
-                                    <span class="badge bg-success">Disponibile</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">Il signore degli anelli</td>
-                                <td class="d-none d-md-table-cell">18/10/2023</td>
-                                <td>
-                                    <span class="badge bg-warning">In prestito</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">Harry Potter e la pietra
-                                    filosofale</td>
-                                <td class="d-none d-md-table-cell">-</td>
-                                <td>
-                                    <span class="badge bg-success">Disponibilee</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">Il codice Da Vinci</td>
-                                <td class="d-none d-md-table-cell">-</td>
-                                <td>
-                                    <span class="badge bg-danger">Non
-                                        disponibile</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">Shining</td>
-                                <td class="d-none d-md-table-cell">-</td>
-                                <td>
-                                    <span class="badge bg-success">Disponibile</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">La divina commedia</td>
-                                <td class="d-none d-md-table-cell">21/09/2023</td>
-                                <td>
-                                    <span class="badge bg-warning">In prestito</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">Il trono di spade</td>
-                                <td class="d-none d-md-table-cell">-</td>
-                                <td>
-                                    <span class="badge bg-success">Disponibile</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">Il mondo di Sofia</td>
-                                <td class="d-none d-md-table-cell">-</td>
-                                <td>
-                                    <span class="badge bg-danger">Non
-                                        disponibile</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">Le cronache di Narnia; il leone,
-                                    la strega e l'armadio</td>
-                                <td class="d-none d-md-table-cell">25/07/2023</td>
-                                <td>
-                                    <span class="badge bg-warning">In prestito</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">Il piccolo principe</td>
-                                <td class="d-none d-md-table-cell">-</td>
-                                <td>
-                                    <span class="badge bg-success">Disponibile</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class>
-                                <td scope="row">La storia infinita</td>
-                                <td class="d-none d-md-table-cell">-</td>
-                                <td>
-                                    <span class="badge bg-success">Disponibile</span>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-pencil-alt fa-sm fa-fw"></i>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-secondary">
-                                        <i class="fas fa-trash fa-sm fa-fw"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                                </div>
+                                <div class="accordion accordion-flush"
+                                    id="faq-accordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header"
+                                            id="flush-faq-2">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapse-faq-2"
+                                                aria-expanded="true"
+                                                aria-controls="flush-collapse-faq-2">
+                                                Accordion Item #2
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="flush-collapse-faq-2"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingOne"
+                                            data-bs-parent="#faq-accordion">
+                                            <div class="accordion-body">
+                                                This is the first item's
+                                                accordion body.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="accordion accordion-flush"
+                                    id="faq-accordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header"
+                                            id="flush-faq-3">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapse-faq-3"
+                                                aria-expanded="true"
+                                                aria-controls="flush-collapse-faq-3">
+                                                Accordion Item #3
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="flush-collapse-faq-3"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingOne"
+                                            data-bs-parent="#faq-accordion">
+                                            <div class="accordion-body">
+                                                This is the first item's
+                                                accordion body.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </main>
 
